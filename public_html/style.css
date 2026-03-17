@@ -1,0 +1,119 @@
+:root {
+    --bg-dark: #111111;
+    --bg-light: #5b4f42;
+    --text-dark: #0f0f0f;
+    --text-light: #ffffff;
+    --accent: #f2c94c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    text-align: center;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--bg-light);
+    padding: 0;
+}
+
+.long-menu-image {
+    width: 100%;
+    max-width: 860px;
+    height: auto;
+    display: block;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+}
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-inner {
+    position: relative;
+    width: auto;
+    max-width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.popup-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 80vh;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.close-circle {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 36px;
+    height: 36px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10001;
+}
+
+.close-circle:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 380px) {
+    .popup-inner {
+        max-width: 80%;
+    }
+
+    .close-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        top: -12px;
+        right: -12px;
+    }
+}
