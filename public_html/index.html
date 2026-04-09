@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Teos Avlu - Eski Foça'nın Yeni Yüzü!</title>
-    <meta name="description" content="Teos Avlu - Eski Foça'nın Yeni Yüzü!">
-    <link rel="icon" href="teosavlu-logo.png?v=1" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#342b24">
+    <title>Teos Avlu - Menu Language Selection</title>
+    <meta name="description" content="Teos Avlu menüsünü Türkçe veya İngilizce olarak görüntüleyin.">
+    <link rel="icon" href="teosavlu-logo.png?v=3" type="image/png">
+    <link rel="stylesheet" href="style.css?v=20260410">
 </head>
-<body>
-    <main class="menu-container">
-        <img src="teosavlu-comingsoon.jpg?v=20260318" alt="Teos Avlu Coming Soon" class="long-menu-image">
+<body class="language-page">
+    <main class="language-shell">
+        <section class="language-card" aria-labelledby="language-title">
+            <div class="brand-mark">
+                <img src="teosavlu-logo.png?v=3" alt="Teos Avlu Logo">
+            </div>
+
+            <p class="eyebrow">Foça'nın Yeni Yüzü</p>
+            <h1 id="language-title">Teos Avlu</h1>
+            <p class="language-intro">Menüyü görüntülemek istediğiniz dili seçin.</p>
+
+            <div class="language-actions" aria-label="Dil seçenekleri">
+                <a href="menu-tr.html" class="language-button primary">
+                    <span class="language-name">Türkçe Menü</span>
+                    <span class="language-note">Menüyü Türkçe görüntüle</span>
+                </a>
+
+                <a href="menu-en.html" class="language-button">
+                    <span class="language-name">English Menu</span>
+                    <span class="language-note">View the menu in English</span>
+                </a>
+            </div>
+        </section>
     </main>
-
-    <div id="campaign-popup" class="popup-overlay" style="display:none;">
-        <div class="popup-inner">
-            <div class="close-circle" onclick="closePopup()">&#10005;</div>
-            <img id="popup-image" class="popup-img" alt="Teos Avlu Kampanya">
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

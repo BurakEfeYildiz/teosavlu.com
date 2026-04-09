@@ -36,6 +36,10 @@ async function loadFirstAvailablePopup() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+    if (!popup || !popupImage) {
+        return;
+    }
+
     const popupSrc = await loadFirstAvailablePopup();
     if (!popupSrc) {
         return;
@@ -49,13 +53,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function closePopup() {
+    if (!popup) {
+        return;
+    }
+
     popup.style.display = 'none';
 }
 
-popup.addEventListener('click', (event) => {
-    if (event.target.id === 'campaign-popup') {
-        closePopup();
-    }
-});
+if (popup) {
+    popup.addEventListener('click', (event) => {
+        if (event.target.id === 'campaign-popup') {
+            closePopup();
+        }
+    });
+}
 
 window.closePopup = closePopup;
